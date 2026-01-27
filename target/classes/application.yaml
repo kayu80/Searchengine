@@ -1,0 +1,52 @@
+# Профиль разработки
+spring:
+  profiles.active: dev
+
+# Настройки соединения с базой данных PostgreSQL
+datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/search_engine_db
+  username: postgres
+  password: Cdtnjxrf13!
+  hikari:
+    minimum-idle: 10
+    maximum-pool-size: 20
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000
+
+# Настройки JPA/Hibernate
+jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  show-sql: true
+  hibernate:
+    ddl-auto: validate
+  properties:
+    hibernate.jdbc.batch_size: 20
+    hibernate.order_inserts: true
+    hibernate.order_updates: true
+
+# Включаем поддержку Liquibase
+liquibase:
+  enabled: true
+  change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+# Серверные настройки
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,application/javascript,image/jpeg,image/png
+    min-response-size: 1KB
+
+
+security:
+  basic.enabled: false
+
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.security: WARN
