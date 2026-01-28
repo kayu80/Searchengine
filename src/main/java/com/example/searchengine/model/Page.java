@@ -2,7 +2,7 @@ package com.example.searchengine.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "page")
@@ -28,4 +28,5 @@ public class Page {
     @Lob
     @Column(nullable = false)
     private String content;
+
 }
