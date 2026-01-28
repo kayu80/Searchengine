@@ -2,7 +2,7 @@ package com.example.searchengine.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "lemma")
@@ -24,4 +24,5 @@ public class Lemma {
 
     @Column(nullable = false)
     private Integer frequency; // Частота встречаемости в документах
+
 }
