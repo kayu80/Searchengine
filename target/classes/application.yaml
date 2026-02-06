@@ -1,0 +1,49 @@
+
+
+indexing-settings:
+  sites:
+    - url: https://www.lenta.ru
+      name: Лента.ру
+    - url: https://www.skillbox.ru
+      name: Skillbox
+    - url: https://www.playback.ru
+      name: PlayBack.Ru
+server:
+  port: 8080
+  servlet:
+    context-path: /search
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/search_engine
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.searchengine: DEBUG
+
+
+searchengine:
+  sites:
+    - url: https://example.com/
+      name: Example Site
+    - url: https://testsite.org/
+      name: Test Site
