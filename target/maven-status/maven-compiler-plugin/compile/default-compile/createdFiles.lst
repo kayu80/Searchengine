@@ -1,0 +1,11 @@
+searchengine\utils\HtmlCleaner.class
+searchengine\services\SnippetService.class
+searchengine\models\Page.class
+searchengine\dto\statistics\StatisticsResponse.class
+searchengine\dto\statistics\TotalStatistics.class
+searchengine\enums\Status.class
+searchengine\config\DatabaseConfig.class
+searchengine\repositories\PageRepository.class
+searchengine\models\Site.class
+searchengine\dto\statistics\StatisticsData.class
+searchengine\dto\statistics\DetailedStatisticsItem.class
